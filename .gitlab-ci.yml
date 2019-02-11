@@ -15,4 +15,4 @@ build:
   stage: build
   script:
     - echo $CONTAINER_TEST_IMAGE
-    - echo CONTAINER_RELEASE_IMAGE
+    - echo $CONTAINER_RELEASE_IMAGE
