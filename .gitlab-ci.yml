@@ -1,19 +1,19 @@
-job1:
+stages:
+  - build
+
+job 1:
   image: docker:stable
   services:
     - docker:dind
 
-  stages:
-    - build
-
+  stage: build
+  
   variables:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_DRIVER: overlay2
     CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
     CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
 
-  build:
-    stage: build
-    script:
-      - echo $CONTAINER_TEST_IMAGE
-      - echo $CONTAINER_RELEASE_IMAGE
+  script:
+    - echo $CONTAINER_TEST_IMAGE
+    - echo $CONTAINER_RELEASE_IMAGE
