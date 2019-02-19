@@ -2,9 +2,10 @@ stages:
   - testing
 
 Integration test:
-  image: node:10.11.0-alpine
+  image: docker:stable
   services:
-    - docker:stable
+    - node:10.11.0-alpine
+    - docker:dind
   stage: testing
   before_script:
   - apk add --update py-pip && pip install docker-compose
