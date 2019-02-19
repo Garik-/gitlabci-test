@@ -6,10 +6,6 @@ Integration test:
   services:
     - docker:dind
   stage: testing
-  only:
-    - /^sprint\d+$/
-  except:
-    - schedules
   script:
     - echo "testing"
     - npm --version
