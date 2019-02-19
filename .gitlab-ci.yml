@@ -4,10 +4,9 @@ stages:
 Integration test:
   image: node:10.11.0-alpine
   services:
-    - docker:dind
+    - docker:stable
   stage: testing
   before_script:
-  - docker info
   - apk update
   - apk upgrade
   - apk add python python-dev py-pip build-base
