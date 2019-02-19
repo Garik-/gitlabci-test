@@ -7,14 +7,12 @@ Integration test:
     - docker:stable
   stage: testing
   before_script:
-  - apk update
-  - apk upgrade
-  - apk add python python-dev py-pip build-base
-  - pip install docker-compose
-
+  - apk add --update py-pip prisma && pip install docker-compose
+  - npm install -g prisma
   script:
     - echo "testing"
     - npm --version
     - node --version
     - yarn --version
     - docker-compose --version
+    - prisma --version
