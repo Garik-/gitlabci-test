@@ -4,12 +4,11 @@ stages:
 Integration test:
   image: node:10.11.0-alpine
   services:
-    - docker:dind
+    - docker:stable
   stage: testing
   script:
     - echo "testing"
     - npm --version
     - node --version
     - yarn --version
-    - docker --version
     - docker-compose --version
