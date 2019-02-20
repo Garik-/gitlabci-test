@@ -5,6 +5,7 @@ End-to-end testing:
   image: node:10.11.0-alpine
   stage: testing
   before_script:
-    - apk add chromium
+  #  - apk add chromium
   script:
-    - yarn && yarn test:prod
+    - ls -la node_modules/chromedriver/lib/chromedriver/chromedriver
+    # - yarn && yarn test:prod
