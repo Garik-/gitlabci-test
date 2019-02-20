@@ -7,5 +7,6 @@ End-to-end testing:
   before_script:
   #  - apk add chromium
   script:
+    - yarn
     - ls -la node_modules/chromedriver/lib/chromedriver/chromedriver
     # - yarn && yarn test:prod
