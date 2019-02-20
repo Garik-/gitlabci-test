@@ -9,4 +9,5 @@ End-to-end testing:
   script:
     - yarn
     - ls -la node_modules/chromedriver/lib/chromedriver/chromedriver
+    - whereis chromedriver
     # - yarn && yarn test:prod
